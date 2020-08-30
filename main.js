@@ -58,6 +58,9 @@ client.on('message', message => {
             case 'ping':
                 message.reply('pong');
                 break;
+            case 'shrug':
+                message.channel.send('¯\\_(ツ)_/¯');
+                break;
             default:
                 message.channel.send(`"${content[1]}" is not a valid command.`);
         }
