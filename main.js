@@ -1,10 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const BOT_NAME = 'Jarvis'
-
 client.on('ready', () => {
-    console.log('Jarvis bot is ready!');
+    console.log('Helpful bot is ready!');
 });
 
 client.on('message', message => {
@@ -14,7 +12,7 @@ client.on('message', message => {
     }
 
     // actions
-    if (message.content.startsWith('<@!749211769247105076>') || message.content.startsWith('jarvis') || message.content.startsWith('Jarvis')) {
+    if (message.content.startsWith('<@!749211769247105076>') || message.content.startsWith('helpful') || message.content.startsWith('Helpful')) {
         const content = message.content.split(' ');
         switch(content[1]) {
             case 'date':

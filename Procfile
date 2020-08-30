@@ -1,2 +1,2 @@
-worker: node jarvis.js
+worker: node main.js
 

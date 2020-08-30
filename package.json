@@ -1,10 +1,10 @@
 {
-  "name": "Jarvis",
+  "name": "Helpful",
   "description": "Helpful Discord bot for doing random things.",
   "version": "1.0.0",
   "main": "jarvis.js",
   "scripts": {
-    "start": "node jarvis.js"
+    "start": "node main.js"
   },
   "dependencies": {
     "discord.js": "12.3.1",
