@@ -1,3 +1,7 @@
+const HelpCommand = require('./commands/help.js');
+const DateCommand = require('./commands/date.js');
+const ShrugCommand = require('./commands/shrug.js');
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -19,47 +23,16 @@ client.on('message', message => {
         const content = message.content.split(' ');
         switch(content[1]) {
             case 'help':
-                message.channel.send(
-                    'Available commands:\n' +
-                    '  - date: show today\'s date\n' +
-                    '  - help: show all availble commands \n' +
-                    '  - reminder: not implemented\n' +
-                    '  - time: not implemented\n'
-                );
+                HelpCommand.run(message);
                 break;
             case 'date':
-                const monthNames = [
-                    'January',
-                    'February',
-                    'March',
-                    'April',
-                    'May',
-                    'June',
-                    'July',
-                    'August',
-                    'September',
-                    'October',
-                    'November',
-                    'December',
-                ];
-                const dayNames = [
-                    'Sunday',
-                    'Monday',
-                    'Tuesday',
-                    'Wednesday',
-                    'Thursday',
-                    'Friday',
-                    'Saturday',
-                ];
-
-                const today = new Date();
-                message.channel.send(`Today is ${dayNames[today.getDay()]}, ${monthNames[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`);
+                DateCommand.run(message);
                 break;
             case 'ping':
                 message.reply('pong');
                 break;
             case 'shrug':
-                message.channel.send('¯\\_(ツ)_/¯');
+                ShrugCommand.run(message);
                 break;
             default:
                 message.channel.send(`"${content[1]}" is not a valid command.`);
