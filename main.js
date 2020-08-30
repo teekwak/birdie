@@ -1,8 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const botUserId = '<@!749211769247105076>';
+const botUserName = 'birdie';
+
 client.on('ready', () => {
-    console.log('Helpful bot is ready!');
+    console.log('Birdie is ready!');
 });
 
 client.on('message', message => {
@@ -12,9 +15,18 @@ client.on('message', message => {
     }
 
     // actions
-    if (message.content.startsWith('<@!749211769247105076>') || message.content.startsWith('helpful') || message.content.startsWith('Helpful')) {
+    if (message.content.startsWith(botUserId) || message.content.startsWith(botUserName)) {
         const content = message.content.split(' ');
         switch(content[1]) {
+            case 'help':
+                message.channel.send(
+                    'Available commands:\n' +
+                    '  - date: show today\'s date\n' +
+                    '  - help: show all availble commands \n' +
+                    '  - reminder: not implemented\n' +
+                    '  - time: not implemented\n'
+                );
+                break;
             case 'date':
                 const monthNames = [
                     'January',
@@ -38,7 +50,7 @@ client.on('message', message => {
                     'Thursday',
                     'Friday',
                     'Saturday',
-                ]
+                ];
 
                 const today = new Date();
                 message.channel.send(`Today is ${dayNames[today.getDay()]}, ${monthNames[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`);

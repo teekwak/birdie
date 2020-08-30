@@ -1,8 +1,8 @@
 {
-  "name": "Helpful",
-  "description": "Helpful Discord bot for doing random things.",
+  "name": "Birdie",
+  "description": "Birdie Discord bot for doing random things.",
   "version": "1.0.0",
-  "main": "jarvis.js",
+  "main": "main.js",
   "scripts": {
     "start": "node main.js"
   },
